@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.fwrd.xyz/assets/fwrdbeta/favicon.ico"> 
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.fwrd.xyz/assets/fwrdbeta/favicon.ico">
   <title>Newsletter Signup Popup</title>
   <style>
     /* Popup box styles */
@@ -16,6 +16,11 @@
       border-radius: 5px;
       z-index: 9999;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .popup.show {
+      opacity: 1;
     }
     /* Overlay styles */
     .overlay {
@@ -26,6 +31,11 @@
       bottom: 0;
       background-color: rgba(0, 0, 0, 0.7);
       z-index: 9998;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .overlay.show {
+      opacity: 1;
     }
   </style>
 </head>
@@ -44,8 +54,8 @@
     function showPopup() {
       var popup = document.querySelector('.popup');
       var overlay = document.querySelector('.overlay');
-      popup.style.display = 'block';
-      overlay.style.display = 'block';
+      popup.classList.add('show');
+      overlay.classList.add('show');
     }
   </script>
 </body>
